@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Api",
+    "script": "",
+    "exec_mode": "cluster",
+    "node_args": "--harmony",
+    // 定时重启,仅在cluster模式有效, [minute] [hour] [day] [month] [day of week]
+    "cron_restart": "0 2 * * *", // 每天凌晨两点重启
+
+    "instances": -1, // 负数代表服务器cup核心数减N
+    "watch": false,  // 文件有改变则重启,用于调试
+    
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "log_file": "logs/api.log",
+    "error_file": "logs/api-err.log",
+    "out_file": "logs/api-out.log",
+    
+    "max_memory_restart": "500M",
+    
+    "env": { // 默认环境
+      "INTERVAL": 6000,
+      "NODE_ENV": "production",
+      "DEBUG": "express"
+    }
+  },
+
+
+  {
+    "name": "Web",
+    "script": "",
+    "exec_mode": "cluster",
+    "node_args": "--harmony",
+    // 定时重启,仅在cluster模式有效, [minute] [hour] [day] [month] [day of week]
+    "cron_restart": "0 2 * * *", // 每天凌晨两点重启
+
+    "instances": -1, // 负数代表服务器cup核心数减N
+    "watch": false,  // 文件有改变则重启,用于调试
+    
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "log_file": "logs/web.log",
+    "error_file": "logs/web-err.log",
+    "out_file": "logs/web-out.log",
+    
+    "max_memory_restart": "500M",
+    
+    "env": { // 默认环境
+      "INTERVAL": 6000,
+      "NODE_ENV": "production",
+      "DEBUG": "express"
+    }
+  }
+]

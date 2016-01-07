@@ -1,0 +1,23 @@
+
+# Logs
+logs/
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.bundle.*
+
+# test coverage files
+coverage/
+
+# System ignore files
+.tmp
+.DS_Store
+
+# Dependency directory
+node_modules/
+
+#Compiled sources
+bundle/
