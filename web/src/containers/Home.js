@@ -16,6 +16,8 @@ class Home extends Component {
           <Link to="/todo">App</Link>
           {' '}
           <Link to="/foo">foo</Link>
+          {' '}
+          <Link to="/async">async</Link>
         </header>
         <div>
           <button onClick={() => push('/foo')}>Go to /foo</button>
