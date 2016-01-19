@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Header from '../todo/TodoHeader'
-import TodoBody from '../todo/TodoBody'
-import TodoFooter from '../todo/TodoFooter'
+import Header from '../components/todo/TodoHeader'
+import TodoBody from '../components/todo/TodoBody'
+import TodoFooter from '../components/todo/TodoFooter'
 // import MainSection from '../components/MainSection'
 import * as TodoActions from '../actions/todos'
 

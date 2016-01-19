@@ -23,13 +23,13 @@ module.exports = (express, app, env) => {
   })
 
 
-  router.get('/', (req, res) => {
+  router.get('*', (req, res) => {
     res.render('index', { title: 'Home page', insertScript: insertScript })
   })
 
 
   // Route not found - set 404
-  router.get('*', (req, res) => {
+  router.post('*', (req, res) => {
     res.json({
       'route': 'Sorry! This page does not exist!'
     })

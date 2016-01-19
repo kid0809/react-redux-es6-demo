@@ -10,7 +10,7 @@ import { Router, Route, browserHistory } from 'react-router'
 import { syncHistory, routeReducer } from 'redux-simple-router'
 import todos from './reducers/todos'
 
-import Home from './components/Home'
+import Home from './containers/Home'
 import Todo from './containers/App'
 import Foo from './components/Foo'
 
@@ -34,16 +34,16 @@ const finalCreateStore = compose(
 
 
 const store = finalCreateStore(reducer)
-
+middleware.listenForReplays(store);
 
 render(
   <Provider store={store}>
     <div>
       <Router history={browserHistory}>
         <Route path="/" component={Home} >
-          <Route path="todo" component={Todo}/>
           <Route path="foo" component={Foo}/>
         </Route>
+        <Route path="/todo" component={Todo}/>
       </Router>
       <DevTools />
     </div>
