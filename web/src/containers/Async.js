@@ -39,7 +39,7 @@ class Async extends Component {
     const { selectedReddit, posts, isFetching, lastUpdated } = this.props
     return (
       <div>
-        <Picker value={selectedReddit} onChange={this.handleChange} options={['reactjs', 'frontend']} />
+        <Picker value={selectedReddit} onChange={this.handleChange} options={['2016-01-19', '2016-01-20']} />
         <p>
           {lastUpdated &&
             <span>

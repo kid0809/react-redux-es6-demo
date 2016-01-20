@@ -26,7 +26,7 @@ function receivePosts(reddit, json) {
   return {
     type: RECEIVE_POSTS,
     reddit: reddit,
-    posts: json.data.children.map(child => child.data),
+    posts: json.success,
     receivedAt: Date.now()
   }
 }
@@ -34,10 +34,9 @@ function receivePosts(reddit, json) {
 function fetchPosts(reddit) {
   return dispatch => {
     dispatch(requestPosts(reddit))
-    return fetch(`https://www.reddit.com/r/${reddit}.json`)
+    return fetch(`http://localhost:8011/api/price/getpurchase/${reddit}`)
       .then(response => response.json())
       .then(json => {
-        console.log(json) 
         dispatch(receivePosts(reddit, json))
       })
   }

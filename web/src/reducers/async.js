@@ -1,9 +1,9 @@
 import {
   SELECT_REDDIT, INVALIDATE_REDDIT,
   REQUEST_POSTS, RECEIVE_POSTS
-} from '../actions/async'
+} from '../constants/ActionTypes'
 
-export function selectedReddit(state = 'reactjs', action) {
+export function selectedReddit(state = '2016-01-19', action) {
   switch (action.type) {
     case SELECT_REDDIT:
       return action.reddit

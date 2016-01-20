@@ -5,7 +5,7 @@ export default class Posts extends Component {
     return (
       <ul>
         {this.props.posts.map((post, i) =>
-          <li key={i}>序号：{i + 1} 商品名称：{post.good.goodname}({post.goodid}) 单位：{post.good.unit} 实采总量：{post.goodtotal} 实采价格: {post.pprice} 采购总计：{post.pprice * post.goodtotal}</li>
+          <li key={i}>{post.title}</li>
         )}
       </ul>
     )
